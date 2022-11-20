@@ -11,6 +11,8 @@ builder.Services.AddCors(options =>
         });
 });
 
+builder.WebHost.UseKestrel().UseUrls("http://192.168.0.103:5001");
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -23,6 +25,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseHsts();
 app.UseHttpsRedirection();
 app.UseCors(myAllowSpecificOrigins);
 app.UseAuthorization();

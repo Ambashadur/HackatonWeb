@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HackatonWeb.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20221118232809_second")]
+    [Migration("20221120012825_second")]
     partial class second
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,32 +36,11 @@ namespace HackatonWeb.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
                     b.ToTable("Computers");
-                });
-
-            modelBuilder.Entity("HackatonWeb.Domain.Entities.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Age")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("HackatonWeb.Domain.Entities.YaraResult", b =>

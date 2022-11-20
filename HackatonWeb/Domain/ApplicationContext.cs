@@ -5,7 +5,6 @@ namespace HackatonWeb.Domain
 {
     public class ApplicationContext : DbContext
     {
-        public DbSet<User> Users { get; set; } = null!;
         public DbSet<Computer> Computers { get; set; } = null!;
         public DbSet<YaraResult> YaraResults { get; set; } = null!;
 
